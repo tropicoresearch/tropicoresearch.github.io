@@ -1,14 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
+/* ==========================================
+   TRÓPICO — Official Website
+   ========================================== */
+
 :root {
-  --navy: #102a43;
+  --navy: #071a2b;
+  --navy-light: #102f45;
   --blue: #174b70;
-  --teal: #087f8c;
-  --background: #ffffff;
-  --light: #f3f7f9;
+  --teal: #19a8b4;
+
   --text: #34495e;
+  --white: #ffffff;
+  --light: #f4f8fa;
+  --border: #e3ebef;
 }
+
+
+/* ==========================================
+   General
+   ========================================== */
 
 * {
   box-sizing: border-box;
@@ -21,39 +33,64 @@ html {
 
 body {
   margin: 0;
+  background: var(--white);
   color: var(--text);
-  background: var(--background);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.7;
 }
 
 a {
-  color: var(--teal);
+  color: var(--blue);
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--teal);
 }
 
+h1, h2, h3, h4 {
+  font-family: "Manrope", sans-serif;
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* ==========================================
+   Header
+   ========================================== */
+
 .site-header {
+  position: relative;
+  z-index: 10;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding: 15px 6%;
-  background: white;
-  border-bottom: 1px solid #e6edf1;
+
+  gap: 30px;
+  padding: 14px 6%;
+
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+
   color: var(--navy);
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.3rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.35rem;
   font-weight: 800;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  color: var(--navy);
 }
 
 .brand img {
@@ -64,76 +101,170 @@ a:hover {
 
 .site-header nav {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 25px;
 }
 
 .site-header nav a {
   color: var(--navy);
-  font-weight: 600;
   font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
+.site-header nav a:hover {
+  color: var(--teal);
+}
+
+
+/* ==========================================
+   Hero
+   ========================================== */
+
 .hero {
+  position: relative;
+
   display: flex;
   align-items: center;
-  min-height: 560px;
-  padding: 90px 8%;
+
+  min-height: 660px;
+  overflow: hidden;
+
+  padding: 100px 8% 130px;
+
   color: white;
-  background:
-    linear-gradient(110deg, rgba(6, 31, 52, 0.96), rgba(8, 79, 99, 0.83)),
-    radial-gradient(circle at 80% 30%, #399caa, #102a43);
+  background: var(--navy);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(3, 17, 32, 0.96) 0%,
+    rgba(3, 17, 32, 0.88) 25%,
+    rgba(3, 17, 32, 0.55) 52%,
+    rgba(3, 17, 32, 0.15) 100%
+  );
+
+  pointer-events: none;
 }
 
 .hero-content {
-  max-width: 760px;
-}
-
-.eyebrow,
-.section-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
 .eyebrow {
-  color: #92e1df;
+  margin: 0 0 20px;
+  color: #8ce2e1;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
-h1, h2, h3 {
-  font-family: 'Manrope', sans-serif;
-  line-height: 1.25;
-}
+.hero h1 {
+  margin: 0 0 28px;
 
-h1 {
-  margin: 18px 0;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: white;
+  font-size: clamp(2.8rem, 5.4vw, 5.3rem);
   font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #a4e7e5;
 }
 
 .hero-description {
-  max-width: 620px;
-  font-size: 1.3rem;
-  color: #dbeef2;
+  max-width: 580px;
+  margin-bottom: 32px;
+
+  color: #d9e9ee;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.8;
 }
 
-.button {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 13px 24px;
-  background: #ffffff;
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 14px 25px;
+
+  background: white;
   color: var(--navy);
-  border-radius: 6px;
+
+  border-radius: 5px;
+  font-size: 0.95rem;
   font-weight: 700;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
-.button:hover {
-  background: #d9f2f2;
-  text-decoration: none;
+.button-primary:hover {
+  background: #dff5f5;
+  color: var(--navy);
+  transform: translateY(-2px);
 }
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #d5e8ee;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.scroll-indicator:hover {
+  color: white;
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+
+/* ==========================================
+   Sections
+   ========================================== */
 
 .section {
-  padding: 85px 8%;
+  padding: 100px 8%;
 }
 
 .section-alt {
@@ -141,87 +272,420 @@ h1 {
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .section-label {
-  color: var(--teal);
+  margin: 0 0 15px;
+
+  color: #087f8c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
 }
 
-h2 {
-  margin: 12px 0 25px;
+.section h2 {
+  margin: 0 0 30px;
+
   color: var(--navy);
-  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
 }
 
 .section p {
-  max-width: 850px;
+  max-width: 820px;
 }
+
+.intro-text {
+  margin-bottom: 30px;
+
+  color: var(--navy-light);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.section-description {
+  margin-bottom: 40px;
+}
+
+.coming-soon {
+  color: #758c9e;
+  font-style: italic;
+}
+
+
+/* ==========================================
+   Research
+   ========================================== */
 
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 35px;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+  margin-top: 40px;
 }
 
 .research-card {
-  padding: 28px;
+  padding: 32px;
+
   background: white;
-  border: 1px solid #e2eaee;
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  border-color: #bedfe5;
+  box-shadow: 0 12px 30px rgba(7, 26, 43, 0.07);
+}
+
+.card-number {
+  display: block;
+  margin-bottom: 22px;
+
+  color: #0997a4;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
 }
 
 .research-card h3 {
-  margin-top: 0;
+  margin: 0 0 16px;
+
   color: var(--navy);
-  font-size: 1.1rem;
+  font-size: 1.14rem;
+  font-weight: 700;
 }
 
 .research-card p {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 0.95rem;
+  line-height: 1.75;
 }
 
+
+/* ==========================================
+   People
+   ========================================== */
+
+.people-heading {
+  margin: 55px 0 25px;
+
+  color: var(--navy);
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.people-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+  max-width: 860px;
+}
+
+.person-card {
+  overflow: hidden;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.person-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(7, 26, 43, 0.08);
+}
+
+.person-photo {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+  object-position: center;
+
+  background: #e8eff2;
+}
+
+.person-info {
+  padding: 24px 26px 28px;
+}
+
+.person-info h4 {
+  margin: 0 0 10px;
+
+  color: var(--navy);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.person-role {
+  margin: 0 0 12px;
+
+  color: #087f8c;
+  font-size: 0.91rem;
+  font-weight: 700;
+}
+
+.person-affiliation {
+  margin: 0 0 15px;
+
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.person-email {
+  display: inline-block;
+
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+.person-email:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+
+/* ==========================================
+   Contact
+   ========================================== */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 11px 22px;
+
+  background: white;
+  color: var(--navy);
+
+  border: 1px solid #ccdce4;
+  border-radius: 5px;
+
+  font-weight: 700;
+}
+
+.social-links a:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+
+/* ==========================================
+   Footer
+   ========================================== */
+
 .site-footer {
-  padding: 35px 8%;
-  text-align: center;
+  padding: 65px 8% 35px;
+
   background: var(--navy);
-  color: #d6e5ed;
-  font-size: 0.85rem;
+  color: #b9cedb;
+
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.footer-brand img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
 }
 
 .site-footer p {
-  margin: 4px 0;
+  margin: 8px 0;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 850px) {
+.footer-credit {
+  margin-top: 28px !important;
+
+  color: #819eaf;
+  font-size: 0.78rem !important;
+}
+
+.copyright {
+  margin-top: 28px !important;
+  font-size: 0.78rem !important;
+}
+
+
+/* ==========================================
+   Tablet
+   ========================================== */
+
+@media (max-width: 950px) {
+
   .site-header {
     flex-direction: column;
+    gap: 12px;
   }
 
   .site-header nav {
     justify-content: center;
-    gap: 12px 18px;
+    gap: 12px 22px;
+  }
+
+  .hero {
+    min-height: 600px;
   }
 
   .research-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
+
 }
 
-@media (max-width: 560px) {
+
+/* ==========================================
+   Mobile
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .site-header {
+    padding: 15px 5%;
+  }
+
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-header nav {
+    gap: 10px 15px;
+  }
+
+  .site-header nav a {
+    font-size: 0.8rem;
+  }
+
   .hero {
-    min-height: 480px;
-    padding: 70px 7%;
+    min-height: 610px;
+    padding: 85px 7% 110px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(3, 17, 32, 0.94),
+      rgba(3, 17, 32, 0.65)
+    );
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .scroll-indicator {
+    left: 7%;
   }
 
   .section {
-    padding: 65px 7%;
+    padding: 70px 7%;
   }
 
-  .research-grid {
+  .research-grid,
+  .people-grid {
     grid-template-columns: 1fr;
   }
+
+  .research-card {
+    padding: 28px;
+  }
+
+  .person-info {
+    padding: 24px;
+  }
+
+}
+
+
+/* ==========================================
+   Reduced Motion
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero {
+    background:
+      linear-gradient(
+        rgba(7, 26, 43, 0.45),
+        rgba(7, 26, 43, 0.45)
+      ),
+      url("../climate/tropico_sst_poster.webp")
+      center / cover no-repeat,
+      var(--navy);
+  }
+
+  .button-primary,
+  .research-card,
+  .person-card {
+    transition: none;
+  }
+
 }

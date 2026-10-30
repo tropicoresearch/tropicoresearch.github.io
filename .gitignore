@@ -1,7 +1,12 @@
 
 # ============================================
 # TRÓPICO Research Group
-# Official Website - GitHub Pages
+# Official Website — GitHub Pages
+# ============================================
+
+
+# ============================================
+# Operating systems
 # ============================================
 
 # macOS
@@ -20,38 +25,100 @@ Desktop.ini
 *~
 .nfs*
 
-# Python temporary files
+
+# ============================================
+# Python
+# ============================================
+
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+
+# Python environments
 .venv/
 venv/
+env/
 
-# Editor settings
+
+# ============================================
+# Scientific datasets
+# ============================================
+
+# Raw NOAA data and temporary figures
+data/
+
+# NetCDF files
+*.nc
+*.nc4
+*.nc.part
+
+# Other scientific data formats
+*.grib
+*.grb
+*.h5
+*.hdf5
+*.zarr/
+
+
+# ============================================
+# Editors
+# ============================================
+
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Temporary and backup files
+
+# ============================================
+# Temporary files
+# ============================================
+
 *.tmp
 *.temp
 *.bak
 *.log
 *.orig
 
-# Node.js (if used in the future)
+
+# ============================================
+# Node.js (future use)
+# ============================================
+
 node_modules/
 npm-debug.log*
-dist/
 
-# Local environment and secrets
+
+# ============================================
+# Environment and credentials
+# ============================================
+
 .env
 .env.*
 !.env.example
 *.key
 *.pem
 
-# Local scratch files
+
+# ============================================
+# Local working directories
+# ============================================
+
 sandbox/
 scratch/
+
+
+# ============================================
+# Website files
+# ============================================
+
+# Do NOT ignore:
+# index.html
+# assets/css/
+# assets/images/
+# assets/climate/
+# js/
+# scripts/
+#
+# The final MP4, WebM, and WebP assets
+# are required by the published website.
