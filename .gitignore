@@ -1,0 +1,57 @@
+
+# ============================================
+# TRÓPICO Research Group
+# Official Website - GitHub Pages
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+.nfs*
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.log
+*.orig
+
+# Node.js (if used in the future)
+node_modules/
+npm-debug.log*
+dist/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Local scratch files
+sandbox/
+scratch/
