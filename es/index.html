@@ -23,6 +23,31 @@
         href="../assets/images/tropico_logo_es.png">
 
   <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Climate Modes Monitor: self-contained platform card styles -->
+  <style>
+    .platform-art-modes {
+      background: radial-gradient(ellipse at 53% 43%, #23576c 0%, #103d54 52%, #071b30 100%);
+    }
+    @media (min-width: 1100px) {
+      .section-platforms .platform-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 701px) and (max-width: 1099px) {
+      .section-platforms .platform-grid > .platform-card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: calc(50% - 12px);
+        justify-self: center;
+      }
+    }
+    @media (max-width: 700px) {
+      .section-platforms .platform-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -129,7 +154,8 @@
         <h2>Sobre TRÓPICO</h2>
 
         <p class="intro-text">
-          Estudiamos los procesos físicos que rigen el tiempo atmosférico, el clima y el ciclo del agua en los trópicos.
+          Comprendemos los procesos físicos que determinan el tiempo atmosférico, el clima y la
+          hidrología de las regiones tropicales.
         </p>
 
         <p>
@@ -350,6 +376,61 @@
                  aria-label="Explorar Tropical Weather & Climate Observatory en una pestaña nueva">Visitar el observatorio <span aria-hidden="true">↗</span></a>
             </div>
           </article>
+
+          <!-- Climate Modes Monitor -->
+          <article class="platform-card">
+            <div class="platform-art platform-art-modes" aria-hidden="true">
+              <svg class="platform-svg" viewBox="0 0 580 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="modes-ocean" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#1b5c73"/>
+                    <stop offset=".6" stop-color="#113b54"/>
+                    <stop offset="1" stop-color="#071a30"/>
+                  </linearGradient>
+                  <radialGradient id="modes-light" cx="50%" cy="43%" r="68%">
+                    <stop offset="0" stop-color="#68b3c7" stop-opacity=".25"/>
+                    <stop offset="1" stop-color="#68b3c7" stop-opacity="0"/>
+                  </radialGradient>
+                  <clipPath id="modes-clip">
+                    <rect x="37" y="23" width="506" height="241" rx="12"/>
+                  </clipPath>
+                </defs>
+                <rect x="37" y="23" width="506" height="241" rx="12" fill="url(#modes-ocean)" stroke="#89c3d4" stroke-opacity=".55"/>
+                <g clip-path="url(#modes-clip)">
+                  <rect x="37" y="23" width="506" height="241" fill="url(#modes-light)"/>
+                  <g fill="none" stroke="#b2dfeb" stroke-opacity=".16" stroke-width="1">
+                    <path d="M117 67H533 M117 103H533 M117 139H533 M117 175H533 M117 211H533 M117 247H533"/>
+                    <path d="M156 65V249 M218 65V249 M280 65V249 M342 65V249 M404 65V249 M466 65V249 M528 65V249"/>
+                  </g>
+                  <g fill="#e3f6f8" font-family="Arial,sans-serif" font-weight="bold" font-size="15" letter-spacing="1.1">
+                    <text x="57" y="88">ENSO</text>
+                    <text x="57" y="124">QBO</text>
+                    <text x="57" y="160">PDO</text>
+                    <text x="57" y="196">AMV</text>
+                    <text x="57" y="232">IOD</text>
+                  </g>
+                  <g fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M124 86 C147 67 166 65 185 86 S225 108 244 85 S283 63 307 86 S345 110 369 87 S412 64 433 84 S487 108 525 83" stroke="#f4ab86"/>
+                    <path d="M124 122 C142 109 161 111 178 123 S213 137 230 122 S265 105 286 123 S328 138 348 121 S384 107 404 124 S457 139 480 122 S511 115 525 122" stroke="#88e1df"/>
+                    <path d="M124 159 C153 145 181 145 209 161 S267 176 296 158 S348 144 373 161 S428 176 460 159 S501 145 525 159" stroke="#b6cbf0"/>
+                    <path d="M124 198 C166 185 203 181 240 196 S314 213 347 198 S416 180 456 197 S503 209 525 198" stroke="#f4d392"/>
+                    <path d="M124 230 C147 214 165 214 183 229 S222 248 243 229 S280 216 301 229 S339 249 361 230 S403 215 423 229 S473 246 492 228 S516 219 525 229" stroke="#ddb3ef"/>
+                  </g>
+                  <g fill="#d7f0f4" font-size="10" font-family="Arial,sans-serif" letter-spacing="1.5" opacity=".82">
+                    <text x="56" y="48">LARGE-SCALE CLIMATE VARIABILITY</text>
+                  </g>
+                </g>
+              </svg>
+              <span class="platform-visual-label">GLOBAL · ÍNDICES MENSUALES</span>
+            </div>
+            <div class="platform-content">
+              <p class="platform-eyebrow">VARIABILIDAD CLIMÁTICA A GRAN ESCALA</p>
+              <h3>Climate Modes Monitor</h3>
+              <p>Explora ENSO, QBO, PDO, AMV e IOD mediante índices climáticos mensuales, registros históricos y visualizaciones científicas de la variabilidad del sistema océano-atmósfera.</p>
+              <a class="platform-link" href="https://tropicoresearch.github.io/climate-modes-monitor/" target="_blank" rel="noopener noreferrer"
+                 aria-label="Explorar Climate Modes Monitor en una pestaña nueva">Explorar los modos climáticos <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
         <p class="platform-disclaimer">Ilustraciones conceptuales · Visita las plataformas para consultar los productos científicos más recientes y sus fechas de observación.</p>
       </div>
@@ -397,7 +478,7 @@
               <h4>Christian Domínguez-Sarmiento</h4>
 
               <p class="person-role">
-                Investigadora principal
+                Investigador principal
               </p>
 
               <p class="person-affiliation">
@@ -619,8 +700,8 @@
           <article class="person-card">
 
             <img
-              src="../assets/images/people/jesus_polanco_olvera.webp"
-              alt="Jesús Polanco Olvera"
+              src="../assets/images/people/profile_placeholder_generic.webp"
+              alt="Ilustración genérica de perfil para Jesús Polanco Olvera"
               class="person-photo"
               loading="lazy">
 
